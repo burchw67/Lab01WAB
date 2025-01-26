@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Lab01MenuWAB {
 	public static void main(String[] args) {
-		ArrayList<Integer> arrList = new ArrayList<Integer>();
+		ArrayList<String> arrList = new ArrayList<String>();
 
 		int indexInt = 0;
 		int altInt = 0;
@@ -36,24 +36,26 @@ public class Lab01MenuWAB {
 
 			switch (choice) {
 				case "1":
-					System.out.print("\nEnter an integer to add: ");
+					System.out.print("\nEnter the character to add: ");
 
 					//Take in integer as string, cast to int and add to array list
-					arrList.addFirst(Integer.parseInt(inp.nextLine()));
+					arrList.addFirst(inp.nextLine());
+                    System.out.println("Element added at the beginning.\n");
 					break;
 
 				case "2":
-					System.out.print("\nEnter an integer to add: ");
+					System.out.print("\nEnter the character to add: ");
 
 					//Take in integer as string, cast to int and add to array list
-					arrList.addLast(Integer.parseInt(inp.nextLine()));
+					arrList.addLast(inp.nextLine());
+                    System.out.println("Element added at the end.\n");
 					break;
 
 				case "3":
 					if (arrList.isEmpty()) {
 						System.out.println("\nYou cannot delete data from an empty list!" + "\n");
 					} else {
-						System.out.print("\n" + arrList.getFirst() + " is removed from the list!" + "\n");
+						System.out.print("\n" + arrList.getFirst() + " removed from the beginning!" + "\n");
 						arrList.removeFirst();
 					}
 					break;
@@ -62,7 +64,7 @@ public class Lab01MenuWAB {
 					if (arrList.isEmpty()) {
 						System.out.println("\nYou cannot delete data from an empty list!");
 					} else {
-						System.out.print("\n" + arrList.getLast() + " is removed from the list!" + "\n");
+						System.out.print("\n" + arrList.getLast() + " removed from the end!" + "\n");
 						arrList.removeLast();
 					}
 					break;
@@ -71,7 +73,7 @@ public class Lab01MenuWAB {
 				case "5":
                     if(arrList.isEmpty())
                     {
-                        System.out.println("The ArrayList is empty!");
+                        System.out.println("The Array List is empty!");
                     }
                     else
                     {
@@ -83,7 +85,7 @@ public class Lab01MenuWAB {
 				case "6":
                     if(arrList.isEmpty())
                     {
-                        System.out.println("The ArrayList is empty!");
+                        System.out.println("The Array List is empty!");
                     }
                     else
                     {
@@ -94,16 +96,16 @@ public class Lab01MenuWAB {
 				case "7":
                     if(arrList.isEmpty())
                     {
-                        System.out.println("The ArrayList is empty!");
+                        System.out.println("The Array List is empty!");
                     }
                     else
                     {
-                        System.out.println("The ArrayList is not empty!");
+                        System.out.println("The Array List is not empty!");
                     }
                     break;
 
                 case "8":
-                    System.out.print("There are " + arrList.size() + " elements in the list!");
+                    System.out.println("There are " + arrList.size() + " elements in the list!");
                     break;
 
                 case "9":
@@ -134,7 +136,7 @@ public class Lab01MenuWAB {
                     break;
 
                 case "11":
-                    System.out.print("Are you sure you want to quit? [Y/N] ");
+                    System.out.print("Are you sure you want to quit? [Y/N]");
                     quit = inp.nextLine();
 
                     if(quit.charAt(0) == 'N')
